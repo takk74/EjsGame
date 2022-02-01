@@ -16,12 +16,18 @@ app.listen(port, () => {
 })
 
 app.get('/', (request, response) => {
-  response.render('pages/index', {game : undefined , tries: game.getTries() , word: game.print()} );
+  response.render('pages/index', {game : undefined , tries: game.getTries() , unknowWord: game.print()} );
   
 })
 
 app.post('/', (request , response) => {
-    var inputData = request.body.try;
-    response.body.game.guess();
+
+  if( request.body.reset) {
+    game.reset();
+  } else {
+    let guess = game.guess(request.body.inputData);
+  }
+
+  response.render('pages/index', {game : undefined , tries: game.getTries() , unknowWord: game.print() });
 })
 

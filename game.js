@@ -4,11 +4,14 @@ let word = "bonjour";
 class Game {
     constructor() {
         this.tries = 5;
+        this.word = "bonjour";
+        this.unknowWord = word.replace(/./g, 'x');
     
     }
 
     print() {
-        return word;
+        return this.unknowWord;
+  
     }
     guess(letter){
 
@@ -20,7 +23,7 @@ class Game {
                 return false;
             }
         } 
-        return true;
+        
             
   
     }
