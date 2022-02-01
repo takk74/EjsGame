@@ -1,0 +1,48 @@
+
+
+
+
+<h2 class="result"><% if(tries === 0) { %> Perdu <% } %> </h2>
+
+
+<form action="" method="POST" class="container">
+
+    <h1>Jeu du pendu </h1>
+   
+    <input type="text" name="try" placeholder="Rentrer une lettre ...">
+    <button value="Chercher"></button>
+    <span>Mot à trouver : <%= word %> </span>
+    <span>Tentatives restantes : <%= tries %> </span>
+</form >
+
+
+
+
+<style>
+    body {
+        background: rgb(56, 56, 56);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        text-transform: uppercase;
+        color: indianred;
+        font-size: 40px;
+    }
+    input {
+        margin-bottom: 20px;
+    }
+    span {
+        color: white;
+        font-size: 30px;
+    }
+
+</style>
