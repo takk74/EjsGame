@@ -12,7 +12,6 @@ class Game {
     }
 
 
-
     print() {
         return this.unknowWord;
     }
@@ -21,8 +20,14 @@ class Game {
 
         if(this.tries > 0) {
             if(this.word.includes(letter)) {
-                const indexOf = word.indexOf(letter)
-                this.unknowWord = this.unknowWord.replaceAt(indexOf, letter)
+                for(const index in word) {
+                    if (word.hasOwnProperty(index)) {
+                        console.log(word[index]);
+                        if(word[index] == letter) {
+                            this.unknowWord = this.unknowWord.replaceAt(index, letter);
+                        }  
+                    }                  
+                }
                 return true;
 
             } else {
@@ -37,7 +42,7 @@ class Game {
     }
     reset() {
         this.tries = 5;
-        this.unknowWord = word.replace(/./g, 'x');
+        this.unknowWord = word.replace(/./g, '#');
     }
     
 }
