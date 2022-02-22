@@ -8,14 +8,12 @@
 <form action="" method="POST" class="container">
     <h1>Jeu du pendu </h1>
    
-    <input type="text" name="inputData" value="" maxlength="X" placeholder="Rentrer une lettre ...">
+    <input type="text" name="inputData" value="" maxlength="" placeholder="Rentrer une lettre ...">
     <button type="submit">Tester</button>
     <button type="submit" name="reset" value="true"> Reset </button>
     <span>Mot à trouver : <%= unknowWord %> </span>
     <span>Tentatives restantes : <%= tries %> </span>
 </form >
-
-
 
 
 <style>
@@ -39,6 +37,11 @@
     }
     input {
         margin-bottom: 20px;
+        padding: 10px 20px 10px 5px;
+        border: none;
+        background-color: beige;
+        border-radius: 5px;
+        outline: none;
     }
     
     span {
@@ -52,6 +55,7 @@
         border: none;
         outline: none;
         margin-bottom: 15px;
+        cursor: pointer;
     }
     h2 {
         color: red;
