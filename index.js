@@ -4,8 +4,10 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT;
 const app = express();
 const Game = require('./game');
+const Timer = require('./timer');
 
 const game = new Game();
+const timer = new Timer();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));

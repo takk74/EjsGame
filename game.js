@@ -1,3 +1,5 @@
+const Timer = require("./timer");
+
 String.prototype.replaceAt = function(index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
@@ -9,12 +11,15 @@ class Game {
         this.tries = 5;
         this.word = "bonjour";
         this.unknowWord = word.replace(/./g, '#');
+        this.timer = new Timer();
     }
 
 
     print() {
         return this.unknowWord;
+        
     }
+
     
     guess(letter){
 
@@ -43,6 +48,7 @@ class Game {
     reset() {
         this.tries = 5;
         this.unknowWord = word.replace(/./g, '#');
+        this.timer.reset()
     }
     
 }
